@@ -1,0 +1,27 @@
+{
+  "name": "reactexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlottechen1993/charlotte-chen-dev.git"
+  },
+  "author": "Charlotte Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charlottechen1993/charlotte-chen-dev/issues"
+  },
+  "homepage": "https://github.com/charlottechen1993/charlotte-chen-dev#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1"
+  }
+}
+
