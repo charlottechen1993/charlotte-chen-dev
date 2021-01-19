@@ -43,7 +43,7 @@ const port = process.env.PORT || 5000; // if heroku doesn't have port 5000, use 
 
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static('client'))
+    app.use(express.static('client/build'))
 }
 
 app.listen(port, () => {
