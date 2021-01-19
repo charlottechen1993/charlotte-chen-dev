@@ -39,7 +39,12 @@ app.get('/api/experiences', (req, res) => {
     res.json(experiences);
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; // if heroku doesn't have port 5000, use whatever is available
+
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static('client'))
+}
 
 app.listen(port, () => {
     console.log(`server started on port ${port}`);
