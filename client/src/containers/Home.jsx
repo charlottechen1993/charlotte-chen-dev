@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Grid,
     IconButton
@@ -9,8 +9,24 @@ import {
     Instagram,
     LinkedIn
 } from '@material-ui/icons';
+import { uniqueId } from 'lodash';
 
 const Home = () => {
+    const [social, updateSocial] = useState([]);
+    
+    useEffect(() => {
+        fetch('/api/social')
+            .then((res) => res.json())
+            .then((response) => updateSocial(response));
+    }, []);
+
+    const iconMap = {
+        "github": GitHub,
+        "facebook": Facebook,
+        "instagram": Instagram,
+        "linkedin": LinkedIn
+    }
+
     return (
         <Grid
             container
@@ -23,9 +39,17 @@ const Home = () => {
                 direction="row"
                 justify="center"
                 alignItems="center">
-                <IconButton href="https://github.com/charlottechen1993" target="_blank"><GitHub fontSize="small" /></IconButton>
-                <IconButton href="https://www.linkedin.com/in/charlotte-chen-b6200781/" target="_blank"><LinkedIn fontSize="small" /></IconButton>
-                <IconButton href="https://www.instagram.com/charlottechen1993/" target="_blank"><Instagram fontSize="small" /></IconButton>
+                {social.map((platform) => {
+                    const IconName = iconMap[platform.name.toLowerCase()];
+                    return (
+                        <IconButton
+                            key={uniqueId()}
+                            href={platform.url}
+                            target="_blank">
+                            <IconName fontSize="small" />
+                        </IconButton>
+                    )
+                })}
             </Grid>
         </Grid>
         

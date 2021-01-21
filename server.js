@@ -49,6 +49,25 @@ app.get('/api/about', (req, res) => {
     res.json(about);
 });
 
+app.get('/api/social', (req, res) => {
+    const social = [
+        {
+            name: "Instagram",
+            url: "https://www.instagram.com/charlottechen1993/"
+        },
+        {
+            name: "GitHub",
+            url: "https://github.com/charlottechen1993"
+        },
+        {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/charlotte-chen-b6200781/"
+        }
+    ]
+
+    res.json(social);
+});
+
 
 const port = process.env.PORT || 5000; // if heroku doesn't have port 5000, use whatever is available
 
