@@ -23,6 +23,7 @@ app.get('/api/experiences', (req, res) => {
                 "Primary developer of the camping order details form, availability/booking grid, and the internal camping inventory and reservation management systems.",
                 "Hosts bi-weekly frontend guild meetings for the project."
             ],
+            url: "https://www.recreation.gov/",
             is_current: true
         },
         {
@@ -32,6 +33,7 @@ app.get('/api/experiences', (req, res) => {
                 "Led frontend development efforts for one of NIH’s data sharing platforms (https://dash.nichd.nih.gov) using ReactJS, Redux, Redux-Form, Bootstrap, Sass, and C#",
                 "Served as the primary developer and designer for the study information page and study request form."
             ],
+            url: "https://dash.nichd.nih.gov/",
             is_current: false
         }
     ];
@@ -67,6 +69,36 @@ app.get('/api/social', (req, res) => {
 
     res.json(social);
 });
+
+app.get('/api/projects', (req, res) => {
+    const projects = [
+        {
+            name: "charlottechen.dev",
+            url: "www.charlottechen.dev",
+            tech: [
+                "React",
+                "NodeJS",
+                "ExpressJS",
+                "HTML",
+                "Sass"
+            ]
+        },
+        {
+            name: "Pitt Fashion Share",
+            url: "www.pittfashionshare.appspot.com",
+            tech: [
+                "AngularJS",
+                "Python",
+                "HTML",
+                "CSS",
+                "Bootstrap"
+            ]
+        }
+    ]
+
+    res.json(projects);
+});
+
 
 const port = process.env.PORT || 5000; // if heroku doesn't have port 5000, use whatever is available
 

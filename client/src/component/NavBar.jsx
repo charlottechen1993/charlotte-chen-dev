@@ -26,33 +26,46 @@ import {
     Home as HomeIcon,
     PersonOutline as PersonOutlineIcon,
     WorkOutline as WorkOutlineIcon,
+    Code as CodeIcon,
     ChevronLeft,
     ChevronRight
 } from '@material-ui/icons';
 import { useTheme } from '@material-ui/core/styles';
+import { uniqueId } from 'lodash';
 
 import Home from '../containers/Home';
 import About from '../containers/About';
 import Experiences from '../containers/Experiences';
+import Projects from '../containers/Projects';
 
 import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
+
 
 const menuItems = [
     {
         id: 'home',
         label: "Home",
         icon: <HomeIcon />,
+        component: <Home />
     },
     {
         id: 'about',
         label: "About",
-        icon: <PersonOutlineIcon />
+        icon: <PersonOutlineIcon />,
+        component: <About />
     },
     {
         id: 'experiences',
         label: "Experiences",
-        icon: <WorkOutlineIcon />
+        icon: <WorkOutlineIcon />,
+        component: <Experiences />
+    },
+    {
+        id: 'projects',
+        label: "Projects",
+        icon: <CodeIcon />,
+        component: <Projects />
     }
 ];
 
@@ -108,15 +121,11 @@ const NavBar = () => {
 
                 <Container>
                     <Switch>
-                        <Route path="/experiences">
-                            <Experiences />
-                        </Route>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
+                        { menuItems.map((item) => (
+                            <Route path={`/${item.id}`} key={uniqueId()}>
+                                {item.component}
+                            </Route>
+                        ))}
                     </Switch>
                 </Container>
             </AppBar>

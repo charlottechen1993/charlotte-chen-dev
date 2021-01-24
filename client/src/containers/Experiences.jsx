@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Grid } from '@material-ui/core';
 import { uniqueId } from 'lodash';
 
 const Experiences = () => {
@@ -11,7 +12,13 @@ const Experiences = () => {
     }, []);
 
     return (
-        <div>
+        <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            className="experiences-container">
+            <h1>Experiences</h1>
             <ul>
                 {experiences.map((experience) => (
                     <li key={uniqueId()}>
@@ -24,7 +31,7 @@ const Experiences = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </Grid>
     )
 }
 

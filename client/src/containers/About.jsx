@@ -23,7 +23,6 @@ const About = () => {
             <p>
                 {about.description}
             </p>
-            <img src={profileImage} alt="profile" />
         </Grid>
     )
 }
