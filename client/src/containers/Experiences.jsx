@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { uniqueId } from 'lodash';
 
 const Experiences = () => {
     const [experiences, updateExperiences] = useState([]);
@@ -13,7 +14,7 @@ const Experiences = () => {
         <div>
             <ul>
                 {experiences.map((experience) => (
-                    <li>
+                    <li key={uniqueId()}>
                         {experience.company} - {experience.role}
                         <ul>
                             { experience.descriptions.map((description) => <li>{description}</li>)}

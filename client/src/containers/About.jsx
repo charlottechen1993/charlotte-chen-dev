@@ -17,8 +17,7 @@ const About = () => {
             container
             direction="row"
             justify="center"
-            alignItems="center"
-            >
+            alignItems="center">
             <h1>About Me</h1>
             <p>
                 {about.description}

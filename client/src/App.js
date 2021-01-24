@@ -19,7 +19,7 @@ import Experiences from './containers/Experiences';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey } from '@material-ui/core/colors';
-
+import useWindowSize from './hooks/useWindowSize';
 
 const theme = createMuiTheme({
   palette: {
@@ -39,6 +39,10 @@ const theme = createMuiTheme({
 });
 
 function App() {
+    const {
+        width
+    } = useWindowSize();
+    
     return (
         <ThemeProvider theme={theme}>
             <Router>
@@ -50,25 +54,29 @@ function App() {
                             variant="h6">
                             Charlotte Chen
                         </Typography>
-
-                        <div>
-                            <Link to="/">
-                                <Button color="inherit">
-                                    Home
-                                </Button>
-                            </Link>
-                            <Link to="/about">
-                                <Button color="inherit">
-                                    About
-                                </Button>
-                            </Link>
-                            <Link to="/experiences">
-                                <Button color="inherit">
-                                Experiences
-                                </Button>
-                            </Link>
-                        </div>
-                        
+                        { width > 900 
+                            ? (
+                                <div>
+                                    <Link to="/">
+                                        <Button color="inherit">
+                                            Home
+                                        </Button>
+                                    </Link>
+                                    <Link to="/about">
+                                        <Button color="inherit">
+                                            About
+                                        </Button>
+                                    </Link>
+                                    <Link to="/experiences">
+                                        <Button color="inherit">
+                                        Experiences
+                                        </Button>
+                                    </Link>
+                                </div>
+                            )
+                            : (
+                                <div>Hello</div>
+                            )}
                     </Toolbar>
                 </AppBar>
                 <Container>

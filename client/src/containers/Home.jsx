@@ -27,13 +27,13 @@ const Home = () => {
         "instagram": Instagram,
         "linkedin": LinkedIn
     }
-
     return (
         <Grid
             container
             direction="row"
             justify="center"
-            alignItems="center">
+            alignItems="center"
+            className="home-container">
             <h1>Hi, I'm Charlotte</h1>
             <Grid
                 container
@@ -42,12 +42,13 @@ const Home = () => {
                 alignItems="center">
                 <img src={homeImage} alt="home page" />
             </Grid>
+            
             <Grid
                 container
                 direction="row"
                 justify="center"
                 alignItems="center">
-                {social.map((platform) => {
+                { social.map((platform) => {
                     const IconName = iconMap[platform.name.toLowerCase()];
                     return (
                         <IconButton

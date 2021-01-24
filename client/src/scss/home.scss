@@ -1,3 +1,13 @@
-img {
-    width: 30rem;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+.home-container {
+    img {
+        width: 60%;
+    }
+    @media (min-width: #{$tablet-width}) {
+        img {
+            width: 20rem;
+        }
+    }
 }
