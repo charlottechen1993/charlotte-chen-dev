@@ -10,7 +10,7 @@ import {
     LinkedIn
 } from '@material-ui/icons';
 import { uniqueId } from 'lodash';
-import homeIcon from '../images/homeIcon.png';
+import homeImage from '../images/homeImage.png';
 
 const Home = () => {
     const [social, updateSocial] = useState([]);
@@ -40,7 +40,7 @@ const Home = () => {
                 direction="row"
                 justify="center"
                 alignItems="center">
-                <img src={homeIcon} alt="home page" />
+                <img src={homeImage} alt="home page" />
             </Grid>
             <Grid
                 container
