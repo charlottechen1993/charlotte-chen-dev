@@ -31,7 +31,6 @@ import {
     ChevronRight
 } from '@material-ui/icons';
 import { useTheme } from '@material-ui/core/styles';
-import { uniqueId } from 'lodash';
 
 import Home from '../containers/Home';
 import About from '../containers/About';
@@ -41,6 +40,7 @@ import Projects from '../containers/Projects';
 import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
 
+import { MOBILE_BREAKPOINT } from '../constants/breakpoints';
 
 const menuItems = [
     {
@@ -94,7 +94,7 @@ const NavBar = () => {
                         variant="h6">
                         Charlotte Chen
                     </Typography>
-                    { width > 900 
+                    { width > MOBILE_BREAKPOINT
                         ? (
                             <div>
                                 { menuItems.map((item) => (
@@ -122,7 +122,7 @@ const NavBar = () => {
                 <Container>
                     <Switch>
                         { menuItems.map((item) => (
-                            <Route path={`/${item.id}`} key={uniqueId()}>
+                            <Route path={`/${item.id}`} key={item.id}>
                                 {item.component}
                             </Route>
                         ))}

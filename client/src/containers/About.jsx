@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {
     Grid
 } from '@material-ui/core'
-import profileImage from '../images/profile.jpg';
 
 const About = () => {
     const [about, updateAbout] = useState({});
@@ -18,7 +17,8 @@ const About = () => {
             container
             direction="row"
             justify="center"
-            alignItems="center">
+            alignItems="center"
+            className="about-container">
             <h1>About Me</h1>
             <p>
                 {about.description}
