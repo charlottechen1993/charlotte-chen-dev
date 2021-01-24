@@ -1,25 +1,10 @@
 import "./App.scss";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-import {
-    AppBar,
-    Typography,
-    Toolbar,
-    Button,
-    ThemeProvider,
-    Container
-} from '@material-ui/core'
-import Home from './containers/Home';
-import About from './containers/About';
-import Experiences from './containers/Experiences';
-
+    ThemeProvider
+} from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey } from '@material-ui/core/colors';
-import useWindowSize from './hooks/useWindowSize';
+import NavBar from './component/NavBar';
 
 const theme = createMuiTheme({
   palette: {
@@ -39,60 +24,9 @@ const theme = createMuiTheme({
 });
 
 function App() {
-    const {
-        width
-    } = useWindowSize();
-    
     return (
         <ThemeProvider theme={theme}>
-            <Router>
-                <AppBar
-                    position="static"
-                    color="transparent">
-                    <Toolbar>
-                        <Typography
-                            variant="h6">
-                            Charlotte Chen
-                        </Typography>
-                        { width > 900 
-                            ? (
-                                <div>
-                                    <Link to="/">
-                                        <Button color="inherit">
-                                            Home
-                                        </Button>
-                                    </Link>
-                                    <Link to="/about">
-                                        <Button color="inherit">
-                                            About
-                                        </Button>
-                                    </Link>
-                                    <Link to="/experiences">
-                                        <Button color="inherit">
-                                        Experiences
-                                        </Button>
-                                    </Link>
-                                </div>
-                            )
-                            : (
-                                <div>Hello</div>
-                            )}
-                    </Toolbar>
-                </AppBar>
-                <Container>
-                    <Switch>
-                        <Route path="/experiences">
-                            <Experiences />
-                        </Route>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
-                    </Switch>
-                </Container>
-            </Router>
+            <NavBar />
         </ThemeProvider>
     );
 }
