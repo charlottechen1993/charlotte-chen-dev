@@ -15,6 +15,7 @@ import {
     Drawer,
     Divider,
     Container,
+    ClickAwayListener,
     List,
     ListItem,
     ListItemIcon,
@@ -22,10 +23,11 @@ import {
 } from '@material-ui/core'
 import {
     Menu,
+    Home as HomeIcon,
+    PersonOutline as PersonOutlineIcon,
+    WorkOutline as WorkOutlineIcon,
     ChevronLeft,
-    ChevronRight,
-    MoveToInbox,
-    Mail
+    ChevronRight
 } from '@material-ui/icons';
 import { useTheme } from '@material-ui/core/styles';
 
@@ -35,6 +37,24 @@ import Experiences from '../containers/Experiences';
 
 import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
+
+const menuItems = [
+    {
+        id: 'home',
+        label: "Home",
+        icon: <HomeIcon />,
+    },
+    {
+        id: 'about',
+        label: "About",
+        icon: <PersonOutlineIcon />
+    },
+    {
+        id: 'experiences',
+        label: "Experiences",
+        icon: <WorkOutlineIcon />
+    }
+];
 
 const NavBar = () => {
     const { width } = useWindowSize();
@@ -64,21 +84,13 @@ const NavBar = () => {
                     { width > 900 
                         ? (
                             <div>
-                                <Link to="/">
-                                    <Button color="inherit">
-                                        Home
-                                    </Button>
-                                </Link>
-                                <Link to="/about">
-                                    <Button color="inherit">
-                                        About
-                                    </Button>
-                                </Link>
-                                <Link to="/experiences">
-                                    <Button color="inherit">
-                                    Experiences
-                                    </Button>
-                                </Link>
+                                { menuItems.map((item) => (
+                                     <Link key={item.id} to={`/${item.id}`}>
+                                        <Button color="inherit">
+                                            {item.label}
+                                        </Button>
+                                    </Link>
+                                ))}
                             </div>
                         )
                         : (
@@ -87,8 +99,7 @@ const NavBar = () => {
                                 aria-label="open drawer"
                                 edge="end"
                                 onClick={handleDrawerOpen}
-                                className={clsx(open && classes.hide)}
-                            >
+                                className={clsx(open && classes.hide)}>
                                 <Menu />
                             </IconButton>
                         )
@@ -109,29 +120,36 @@ const NavBar = () => {
                     </Switch>
                 </Container>
             </AppBar>
-            <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="right"
-                open={open}
-                classes={{
-                    paper: classes.drawerPaper,
-                }}>
-                <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <MoveToInbox /> : <Mail />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
+            <ClickAwayListener
+                mouseEvent="onMouseDown"
+                touchEvent="onTouchStart"
+                onClickAway={handleDrawerClose}>
+                <Drawer
+                    className={`${classes.drawer} app-drawer`}
+                    variant="persistent"
+                    anchor="right"
+                    open={open}
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}>
+                    <div className={classes.drawerHeader}>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />}
+                        </IconButton>
+                    </div>
+                    <Divider />
+                    <List>
+                        { menuItems.map((item) => (
+                            <Link key={item.id} to={`/${item.id}`}>
+                                <ListItem button key={item.label}>
+                                    <ListItemIcon>{item.icon}</ListItemIcon>
+                                    <ListItemText primary={item.label} />
+                                </ListItem>
+                            </Link>
+                        ))}
+                    </List>
+                </Drawer>
+            </ClickAwayListener>
         </Router>
     )
 }

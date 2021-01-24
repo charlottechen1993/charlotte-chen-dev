@@ -17,7 +17,9 @@ const Experiences = () => {
                     <li key={uniqueId()}>
                         {experience.company} - {experience.role}
                         <ul>
-                            { experience.descriptions.map((description) => <li>{description}</li>)}
+                            { experience.descriptions.map((description) =>
+                                <li key={uniqueId()}>{description}</li>
+                            )}
                         </ul>
                     </li>
                 ))}
