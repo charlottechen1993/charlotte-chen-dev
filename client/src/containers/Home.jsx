@@ -34,14 +34,20 @@ const Home = () => {
             justify="center"
             alignItems="center"
             className="home-container">
+
             <h1>Hi, I'm Charlotte</h1>
+
             <Grid
                 container
                 direction="row"
                 justify="center"
                 alignItems="center">
-                <img src={homeImage} alt="home page" />
+                <img src={homeImage} alt="homepage cartoon" />
             </Grid>
+
+            <div>
+                Welcome to my website.
+            </div>
             
             <Grid
                 container

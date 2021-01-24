@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
     Grid
 } from '@material-ui/core'
+import profileImage from '../images/profile.jpg';
 
 const About = () => {
     const [about, updateAbout] = useState({});
@@ -22,6 +23,7 @@ const About = () => {
             <p>
                 {about.description}
             </p>
+            <img src={profileImage} alt="profile" />
         </Grid>
     )
 }
