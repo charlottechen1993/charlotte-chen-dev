@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import {
     Grid,
     IconButton,
-    Box,
-    Typography
+    Box
 } from '@material-ui/core';
 import {
     GitHub,
@@ -41,9 +40,9 @@ const Home = () => {
             className="home-container">
 
             <Box color="text.primary" textAlign="center">
-                <Typography component="h1" variant="h4"><strong>Hi, I'm Charlotte</strong></Typography>
+                <h1>Hi, I'm Charlotte</h1>
             </Box>
-            
+
             <Grid
                 container
                 direction="row"

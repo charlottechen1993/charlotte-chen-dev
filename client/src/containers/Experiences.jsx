@@ -22,21 +22,21 @@ const Experiences = () => {
             <h1>Experiences</h1>
             <div>
                 {experiences.map((experience) => (
-                    <>
-                    <div className="experience-heading-wrapper">
-                        <Typography key={uniqueId()} component="h2" variant="h6">{experience.company} - {experience.role}</Typography>
-                        <Typography variant="body1">
-                            {experience.is_current
-                                ? `${moment(experience.start_date).format('MMMM. YYYY')} - Present`
-                                : `${moment(experience.start_date).format('MMMM. YYYY')} - ${moment(experience.end_date).format('MMMM. YYYY')}`}
-                        </Typography>
+                    <div key={uniqueId()}>
+                        <div className="experience-heading-wrapper">
+                            <Typography component="h2" variant="h6">{experience.company} - {experience.role}</Typography>
+                            <Typography variant="body1">
+                                {experience.is_current
+                                    ? `${moment(experience.start_date).format('MMMM. YYYY')} - Present`
+                                    : `${moment(experience.start_date).format('MMMM. YYYY')} - ${moment(experience.end_date).format('MMMM. YYYY')}`}
+                            </Typography>
+                        </div>
+                        <ul>
+                            { experience.descriptions.map((description) =>
+                                <li key={uniqueId()}>{description}</li>
+                            )}
+                        </ul>
                     </div>
-                    <ul>
-                        { experience.descriptions.map((description) =>
-                            <li key={uniqueId()}>{description}</li>
-                        )}
-                    </ul>
-                    </>
                 ))}
             </div>
         </Grid>

@@ -123,7 +123,9 @@ const NavBar = () => {
                 <Container>
                     <Switch>
                         { menuItems.slice().reverse().map((item) => (
-                            <Route path={isEmpty(item.id) ? "/" : `/${item.id}`} key={item.label}>
+                            <Route
+                                path={isEmpty(item.id) ? "/" : `/${item.id}`}
+                                key={item.label}>
                                 {item.component}
                             </Route>
                         ))}

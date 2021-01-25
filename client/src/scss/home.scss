@@ -1,10 +1,18 @@
+$mobile-width: 600px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
 .home-container {
+    h1 {
+        font-size: 1.4rem;
+        @media (min-width: #{$mobile-width}) {
+            font-size: 2rem;
+        }
+    }
     img {
         width: 60%;
     }
+
     @media (min-width: #{$tablet-width}) {
         img {
             width: 20rem;
