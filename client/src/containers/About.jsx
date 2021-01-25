@@ -8,7 +8,7 @@ const About = () => {
     return (
         <Grid
             container
-            direction="row"
+            direction="row"Link
             justify="center"
             alignItems="center"
             className="about-container">

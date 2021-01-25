@@ -68,7 +68,7 @@ app.get('/api/projects', (req, res) => {
     const projects = [
         {
             name: "charlottechen.dev",
-            url: "www.charlottechen.dev",
+            url: "http://charlottechen.dev",
             tech: [
                 "React",
                 "NodeJS",
@@ -79,7 +79,7 @@ app.get('/api/projects', (req, res) => {
         },
         {
             name: "Pitt Fashion Share",
-            url: "www.pittfashionshare.appspot.com",
+            url: "https://pittfashionshare.appspot.com",
             tech: [
                 "AngularJS",
                 "Python",

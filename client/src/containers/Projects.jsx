@@ -7,11 +7,14 @@ import {
     IconButton
 } from '@material-ui/core';
 import {
-    Info as InfoIcon
+    Link as LinkIcon
 } from '@material-ui/icons';
+import {
+    Link
+} from "react-router-dom";
 import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
-import profile from '../images/profile.jpg';
+import placeholder from '../images/placeholder.png';
 import {
     LARGE_DESKTOP_BREAKPOINT,
     DESKTOP_BREAKPOINT,
@@ -61,13 +64,17 @@ const Projects = () => {
                 cols={columns}>
                 { projects.map((project) => (
                     <GridListTile key={project.name}>
-                        <img src={profile} alt={project.name} />
+                        <img src={placeholder} alt={project.name} />
                         <GridListTileBar
                             title={project.name}
                             actionIcon={
-                                <IconButton aria-label={`info about ${project.name}`} className={classes.icon}>
-                                    <InfoIcon />
-                                </IconButton>
+                                <a rel={'external noreferrer'} href={project.url} target='_blank'>
+                                    <IconButton
+                                        aria-label={`go to ${project.name}`}
+                                        className={classes.icon}>
+                                        <LinkIcon />
+                                    </IconButton>
+                                </a>
                             } />
                     </GridListTile>
                 ))}

@@ -41,7 +41,7 @@ import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
 
 import { MOBILE_BREAKPOINT } from '../constants/breakpoints';
-import { uniqueId } from 'lodash';
+import { uniqueId, isEmpty } from 'lodash';
 
 const menuItems = [
     {
@@ -122,12 +122,22 @@ const NavBar = () => {
 
                 <Container>
                     <Switch>
-                        { menuItems.slice(0).reverse().map((item) => (
-                            <Route path={`/${item.id}`} key={item.label}>
+                        { menuItems.slice().reverse().map((item) => (
+                            <Route path={isEmpty(item.id) ? "/" : `/${item.id}`} key={item.label}>
                                 {item.component}
                             </Route>
                         ))}
                     </Switch>
+                    {/* <Switch>
+                        <Route path='/projects'>
+                            <Projects />
+                        </Route>
+                        <Route path='/'>
+                            <Home />
+                        </Route>
+                    </Switch> */}
+                    
+                    
                 </Container>
             </AppBar>
             <ClickAwayListener

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import {
     Grid,
     IconButton,
@@ -13,9 +14,6 @@ import {
 } from '@material-ui/icons';
 import { uniqueId } from 'lodash';
 import homeImage from '../images/homeImage.png';
-import {
-    Link
-} from "react-router-dom";
 
 const Home = () => {
     const [social, updateSocial] = useState([]);
@@ -65,12 +63,11 @@ const Home = () => {
                     I'm a Software Engineer currently based in Fairfax, VA.
                 </p>
                 <p>
-                    Feel free to check out my <u><Link to="/experiences">experiences</Link></u> and <u><Link to="/projects">projects</Link></u>
-                    &nbsp;that I've been doing on the side, or connect with me at the platforms below.
+                    Feel free to check out my work <u><Link to="/experiences">experiences</Link></u> and personal <u><Link to="/projects">projects</Link></u>,
+                    &nbsp;or connect with me at the platforms below.
                 </p>
             </Box>
-            
-            
+
             <Grid
                 container
                 direction="row"
