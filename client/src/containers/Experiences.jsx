@@ -27,8 +27,8 @@ const Experiences = () => {
                         <Typography key={uniqueId()} component="h2" variant="h6">{experience.company} - {experience.role}</Typography>
                         <Typography variant="body1">
                             {experience.is_current
-                                ? `${moment(experience.start_date).format('LL')} - Present`
-                                : `${moment(experience.start_date).format('LL')} - ${moment(experience.end_date).format('LL')}`}
+                                ? `${moment(experience.start_date).format('MMMM. YYYY')} - Present`
+                                : `${moment(experience.start_date).format('MMMM. YYYY')} - ${moment(experience.end_date).format('MMMM. YYYY')}`}
                         </Typography>
                     </div>
                     <ul>

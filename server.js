@@ -14,7 +14,7 @@ app.get('/api/roles', (req, res) => {
 app.get('/api/experiences', (req, res) => {
     const experiences = [
         {
-            company: "Booz Allen Hamilton (Recreation.gov)",
+            company: "Recreation.gov (Booz Allen Hamilton)",
             role: "Lead Frontend Developer",
             descriptions: [
                 "Facilitates frontend development and continuous delivery efforts for the new www.recreation.gov.",
@@ -29,7 +29,7 @@ app.get('/api/experiences', (req, res) => {
             is_current: true
         },
         {
-            company: "Booz Allen Hamilton (DASH)",
+            company: "DASH (Booz Allen Hamilton)",
             role: "Lead Frontend Developer",
             descriptions: [
                 "Led frontend development efforts for one of NIH’s data sharing platforms (https://dash.nichd.nih.gov) using ReactJS, Redux, Redux-Form, Bootstrap, Sass, and C#",
@@ -38,6 +38,29 @@ app.get('/api/experiences', (req, res) => {
             url: "https://dash.nichd.nih.gov/",
             start_date: '2017/2',
             end_date: '2018/2',
+            is_current: false
+        },
+        {
+            company: "DFAS (Booz Allen Hamilton)",
+            role: "Developer",
+            descriptions: [
+                "Configured the SharePoint 2013 environment for the agency’s new employee membership portal.",
+                "Designed and developed pages and features via HTML, CSS, XSL, and jQuery in SharePoint Designer."
+            ],
+            url: "https://dash.nichd.nih.gov/",
+            start_date: '2016/9',
+            end_date: '2017/2',
+            is_current: false
+        },
+        {
+            company: "Pittsburgh Quantum Institute",
+            role: "Web Developer",
+            descriptions: [
+                "Assist with the frontend development of the new Pittsburgh Quantum Institute (PQI) website by proposing and implementing user-friendly layout designs and interactions"
+            ],
+            url: "https://dash.nichd.nih.gov/",
+            start_date: '2015/9',
+            end_date: '2016/4',
             is_current: false
         }
     ];
