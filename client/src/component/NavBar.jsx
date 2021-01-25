@@ -92,8 +92,8 @@ const NavBar = () => {
                 color="transparent">
                 <Toolbar>
                     <Typography
-                        variant="h6">
-                        Charlotte Chen
+                        variant="body1">
+                        CharlotteChen.dev
                     </Typography>
                     { width > MOBILE_BREAKPOINT
                         ? (
@@ -128,16 +128,6 @@ const NavBar = () => {
                             </Route>
                         ))}
                     </Switch>
-                    {/* <Switch>
-                        <Route path='/projects'>
-                            <Projects />
-                        </Route>
-                        <Route path='/'>
-                            <Home />
-                        </Route>
-                    </Switch> */}
-                    
-                    
                 </Container>
             </AppBar>
             <ClickAwayListener
