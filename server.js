@@ -41,16 +41,6 @@ app.get('/api/experiences', (req, res) => {
     res.json(experiences);
 });
 
-app.get('/api/about', (req, res) => {
-    const about = {
-        first_name: "Charlotte",
-        last_name: "Chen",
-        description: "Hello, I'm Charlotte Chen, a Software Engineer specialized in frontend development in the past 4 years. Since I was little, I have loved to draw comic stories. Eventually I was exposed to computer softwares, and I began to turn my comics into animation cartoons using Powerpoint and eventually Flash. With an equal passion for computer and art, I declared my major in computer science with special focus in web application and UI development. The idea of developing is same to drawing: you start with a blank space and the possibilities are limitless. The potential of creating something great constantly motivates me to develop more applications with beautiful and functional interfaces."
-    };
-
-    res.json(about);
-});
-
 app.get('/api/social', (req, res) => {
     const social = [
         {

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {
     Grid,
-    IconButton
+    IconButton,
+    Box
 } from '@material-ui/core';
 import {
     GitHub,
@@ -36,7 +37,11 @@ const Home = () => {
             className="home-container">
 
             <h1>Hi, I'm Charlotte</h1>
-
+            
+            <Box color="text.primary">
+                <p>Software Engineer</p>
+            </Box>
+            
             <Grid
                 container
                 direction="row"

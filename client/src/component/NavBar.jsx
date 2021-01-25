@@ -41,10 +41,11 @@ import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
 
 import { MOBILE_BREAKPOINT } from '../constants/breakpoints';
+import { uniqueId } from 'lodash';
 
 const menuItems = [
     {
-        id: 'home',
+        id: '',
         label: "Home",
         icon: <HomeIcon />,
         component: <Home />
@@ -98,7 +99,7 @@ const NavBar = () => {
                         ? (
                             <div>
                                 { menuItems.map((item) => (
-                                     <Link key={item.id} to={`/${item.id}`}>
+                                     <Link key={uniqueId()} to={`/${item.id}`}>
                                         <Button color="inherit">
                                             {item.label}
                                         </Button>
@@ -121,8 +122,8 @@ const NavBar = () => {
 
                 <Container>
                     <Switch>
-                        { menuItems.map((item) => (
-                            <Route path={`/${item.id}`} key={item.id}>
+                        { menuItems.slice(0).reverse().map((item) => (
+                            <Route path={`/${item.id}`} key={item.label}>
                                 {item.component}
                             </Route>
                         ))}
@@ -149,7 +150,7 @@ const NavBar = () => {
                     <Divider />
                     <List>
                         { menuItems.map((item) => (
-                            <Link key={item.id} to={`/${item.id}`}>
+                            <Link key={item.label} to={`/${item.id}`}>
                                 <ListItem button key={item.label}>
                                     <ListItemIcon>{item.icon}</ListItemIcon>
                                     <ListItemText primary={item.label} />

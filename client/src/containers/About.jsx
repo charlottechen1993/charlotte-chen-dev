@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
-    Grid
+    Grid,
+    Box
 } from '@material-ui/core'
 
 const About = () => {
-    const [about, updateAbout] = useState({});
-    
-    useEffect(() => {
-        fetch('/api/about')
-            .then((res) => res.json())
-            .then((newRes) => updateAbout(newRes));
-    }, []);
-
     return (
         <Grid
             container
@@ -20,9 +13,21 @@ const About = () => {
             alignItems="center"
             className="about-container">
             <h1>About Me</h1>
-            <p>
-                {about.description}
-            </p>
+            <Box color="text.primary">
+                <p>
+                    Hello, I'm Charlotte Chen, a Software Engineer specialized in frontend development in the past 4 years.
+                </p>
+                <p>
+                    Since I was little, I have loved to draw comic stories. Eventually I was exposed to computer softwares,
+                    and I began to turn my comics into animation cartoons using Powerpoint and eventually Flash.
+                    With an equal passion for computer and art, I declared my major in Computer Science. 
+                </p>
+                <p>
+                    The idea of developing is same to drawing: you start with a blank space and the possibilities are limitless.
+                    The potential of creating something great constantly motivates
+                    me to develop more applications with beautiful and functional interfaces.
+                </p>
+            </Box>
         </Grid>
     )
 }

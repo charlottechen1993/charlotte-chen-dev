@@ -55,7 +55,10 @@ const Projects = () => {
             alignItems="center"
             className="projects-container">
             <h1>Personal Projects</h1>
-            <GridList cellHeight={180} className={classes.gridList} cols={columns}>
+            <GridList
+                cellHeight={180}
+                className={classes.gridList}
+                cols={columns}>
                 { projects.map((project) => (
                     <GridListTile key={project.name}>
                         <img src={profile} alt={project.name} />
