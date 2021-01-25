@@ -8,10 +8,14 @@ import {
     GitHub,
     Facebook,
     Instagram,
-    LinkedIn
+    LinkedIn,
+    YouTube
 } from '@material-ui/icons';
 import { uniqueId } from 'lodash';
 import homeImage from '../images/homeImage.png';
+import {
+    Link
+} from "react-router-dom";
 
 const Home = () => {
     const [social, updateSocial] = useState([]);
@@ -26,7 +30,8 @@ const Home = () => {
         "github": GitHub,
         "facebook": Facebook,
         "instagram": Instagram,
-        "linkedin": LinkedIn
+        "linkedin": LinkedIn,
+        "youtube": YouTube
     }
     return (
         <Grid
@@ -36,10 +41,8 @@ const Home = () => {
             alignItems="center"
             className="home-container">
 
-            <h1>Hi, I'm Charlotte</h1>
-            
-            <Box color="text.primary">
-                <p>Software Engineer</p>
+            <Box color="text.primary" textAlign="center">
+                <h1>Hi, I'm Charlotte</h1>
             </Box>
             
             <Grid
@@ -50,9 +53,23 @@ const Home = () => {
                 <img src={homeImage} alt="homepage cartoon" />
             </Grid>
 
-            <div>
-                Welcome to my website.
-            </div>
+            <Box
+                textAlign="center"
+                color="text.primary"
+                width="90%"
+                maxWidth={500}>
+                <p>
+                    Welcome to my site!
+                </p>
+                <p>
+                    I'm a Software Engineer currently based in Fairfax, VA.
+                </p>
+                <p>
+                    Feel free to check out my <u><Link to="/experiences">experiences</Link></u> and <u><Link to="/projects">projects</Link></u>
+                    &nbsp;that I've been doing on the side, or connect with me at the platforms below.
+                </p>
+            </Box>
+            
             
             <Grid
                 container
