@@ -24,6 +24,8 @@ app.get('/api/experiences', (req, res) => {
                 "Hosts bi-weekly frontend guild meetings for the project."
             ],
             url: "https://www.recreation.gov/",
+            start_date: '2018/2',
+            end_date: null,
             is_current: true
         },
         {
@@ -34,6 +36,8 @@ app.get('/api/experiences', (req, res) => {
                 "Served as the primary developer and designer for the study information page and study request form."
             ],
             url: "https://dash.nichd.nih.gov/",
+            start_date: '2017/2',
+            end_date: '2018/2',
             is_current: false
         }
     ];
