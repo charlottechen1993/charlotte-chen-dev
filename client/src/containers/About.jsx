@@ -8,7 +8,7 @@ const About = () => {
     return (
         <Grid
             container
-            direction="row"Link
+            direction="row"
             justify="center"
             alignItems="center"
             className="about-container">
@@ -27,7 +27,7 @@ const About = () => {
                     The potential of creating something great constantly motivates
                     me to develop more applications with beautiful and functional interfaces.
                 </p>
-            </Box>
+            </Box>        
         </Grid>
     )
 }
