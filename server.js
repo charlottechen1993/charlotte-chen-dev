@@ -24,7 +24,7 @@ app.get('/api/experiences', (req, res) => {
                 "Hosts bi-weekly frontend guild meetings for the project."
             ],
             url: "https://www.recreation.gov/",
-            start_date: '2018/2',
+            start_date: new Date('2018/2'),
             end_date: null,
             is_current: true
         },
@@ -36,8 +36,8 @@ app.get('/api/experiences', (req, res) => {
                 "Served as the primary developer and designer for the study information page and study request form."
             ],
             url: "https://dash.nichd.nih.gov/",
-            start_date: '2017/2',
-            end_date: '2018/2',
+            start_date: new Date('2017/2'),
+            end_date: new Date('2018/2'),
             is_current: false
         },
         {
@@ -48,8 +48,8 @@ app.get('/api/experiences', (req, res) => {
                 "Designed and developed pages and features via HTML, CSS, XSL, and jQuery in SharePoint Designer."
             ],
             url: "https://dash.nichd.nih.gov/",
-            start_date: '2016/9',
-            end_date: '2017/2',
+            start_date: new Date('2016/9'),
+            end_date: new Date('2017/2'),
             is_current: false
         },
         {
@@ -59,8 +59,8 @@ app.get('/api/experiences', (req, res) => {
                 "Assist with the frontend development of the new Pittsburgh Quantum Institute (PQI) website by proposing and implementing user-friendly layout designs and interactions"
             ],
             url: "https://dash.nichd.nih.gov/",
-            start_date: '2015/9',
-            end_date: '2016/4',
+            start_date: new Date('2015/9'),
+            end_date: new Date('2016/4'),
             is_current: false
         }
     ];

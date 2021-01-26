@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import { DateTime } from "luxon";
 import { Grid, Typography } from '@material-ui/core';
 import { uniqueId } from 'lodash';
 
@@ -11,6 +11,7 @@ const Experiences = () => {
             .then((res) => res.json())
             .then((newEx) => updateExperiences(newEx));
     }, []);
+
 
     return (
         <Grid
@@ -27,8 +28,8 @@ const Experiences = () => {
                             <Typography component="h2" variant="h6">{experience.company} - {experience.role}</Typography>
                             <Typography variant="body1">
                                 {experience.is_current
-                                    ? `${moment(experience.start_date).format('MMMM. YYYY')} - Present`
-                                    : `${moment(experience.start_date).format('MMMM. YYYY')} - ${moment(experience.end_date).format('MMMM. YYYY')}`}
+                                    ? `${DateTime.fromISO(experience.start_date).toFormat('LLL. yyyy')} - Present`
+                                    : `${DateTime.fromISO(experience.start_date).toFormat('LLL. yyyy')} - ${DateTime.fromISO(experience.end_date).toFormat('LLL. yyyy')}`}
                             </Typography>
                         </div>
                         <ul>

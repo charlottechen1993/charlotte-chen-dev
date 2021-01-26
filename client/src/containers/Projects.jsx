@@ -9,9 +9,6 @@ import {
 import {
     Link as LinkIcon
 } from '@material-ui/icons';
-import {
-    Link
-} from "react-router-dom";
 import useWindowSize from '../hooks/useWindowSize';
 import useStyles from '../hooks/useStyles';
 import placeholder from '../images/placeholder.png';
