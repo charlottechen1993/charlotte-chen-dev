@@ -80,7 +80,7 @@ const Home = () => {
                             key={uniqueId()}
                             href={platform.url}
                             target="_blank">
-                            <IconName fontSize="small" />
+                            <IconName fontSize="small" color="secondary" />
                         </IconButton>
                     )
                 })}
