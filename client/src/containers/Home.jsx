@@ -15,6 +15,8 @@ import {
 import { uniqueId } from 'lodash';
 import homeImage from '../images/homeImage.png';
 import About from './About';
+import Experiences from './Experiences';
+import Projects from './Projects';
 
 const Home = () => {
     const [social, updateSocial] = useState([]);
@@ -89,6 +91,8 @@ const Home = () => {
             </Grid>
         </Grid>
         <About />
+        <Experiences />
+        <Projects />
         </>
     )
 }

@@ -88,9 +88,8 @@ const NavBar = () => {
     return (
         <Router>
             <AppBar
-                position="static"
-                color="transparent"
-                position="fixed">
+                position="fixed"
+                color="transparent">
                 <Toolbar>
                     <Typography
                         variant="body1">
@@ -122,17 +121,15 @@ const NavBar = () => {
                 </Toolbar>
             </AppBar>
             <div className={classes.offset} />
-            <Container>
-                <Switch>
-                    { menuItems.slice().reverse().map((item) => (
-                        <Route
-                            path={isEmpty(item.id) ? "/" : `/${item.id}`}
-                            key={item.label}>
-                            {item.component}
-                        </Route>
-                    ))}
-                </Switch>
-            </Container>
+            <Switch>
+                { menuItems.slice().reverse().map((item) => (
+                    <Route
+                        path={isEmpty(item.id) ? "/" : `/${item.id}`}
+                        key={item.label}>
+                        {item.component}
+                    </Route>
+                ))}
+            </Switch>
             <ClickAwayListener
                 mouseEvent="onMouseDown"
                 touchEvent="onTouchStart"

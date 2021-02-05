@@ -3,6 +3,7 @@ $tablet-width: 768px;
 $desktop-width: 1024px;
 
 .home-container {
+    padding-bottom: 5rem;
     h1 {
         font-size: 1.4rem;
         @media (min-width: #{$mobile-width}) {

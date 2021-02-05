@@ -4,7 +4,8 @@ import {
     GridList,
     GridListTile,
     GridListTileBar,
-    IconButton
+    IconButton,
+    Container
 } from '@material-ui/core';
 import {
     Link as LinkIcon
@@ -48,35 +49,39 @@ const Projects = () => {
     }, [width]);
 
     return (
-        <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            className="projects-container">
-            <h1>Personal Projects</h1>
-            <GridList
-                cellHeight={180}
-                className={classes.gridList}
-                cols={columns}>
-                { projects.map((project) => (
-                    <GridListTile key={project.name}>
-                        <img src={placeholder} alt={project.name} />
-                        <GridListTileBar
-                            title={project.name}
-                            actionIcon={
-                                <a rel={'external noreferrer'} href={project.url} target='_blank'>
-                                    <IconButton
-                                        aria-label={`go to ${project.name}`}
-                                        className={classes.icon}>
-                                        <LinkIcon />
-                                    </IconButton>
-                                </a>
-                            } />
-                    </GridListTile>
-                ))}
-            </GridList>
-        </Grid>
+        <div className="projects-container">
+            <Container>
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    >
+                    <h1>Personal Projects</h1>
+                    <GridList
+                        cellHeight={180}
+                        className={classes.gridList}
+                        cols={columns}>
+                        { projects.map((project) => (
+                            <GridListTile key={project.name}>
+                                <img src={placeholder} alt={project.name} />
+                                <GridListTileBar
+                                    title={project.name}
+                                    actionIcon={
+                                        <a rel={'external noreferrer'} href={project.url} target='_blank'>
+                                            <IconButton
+                                                aria-label={`go to ${project.name}`}
+                                                className={classes.icon}>
+                                                <LinkIcon />
+                                            </IconButton>
+                                        </a>
+                                    } />
+                            </GridListTile>
+                        ))}
+                    </GridList>
+                </Grid>
+            </Container>
+        </div>
     )
 }
 
