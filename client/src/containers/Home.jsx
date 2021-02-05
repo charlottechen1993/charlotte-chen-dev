@@ -41,7 +41,8 @@ const Home = () => {
             direction="row"
             justify="center"
             alignItems="center"
-            className="home-container">
+            className="home-container"
+            id="home-container">
 
             <Box color="text.primary" textAlign="center">
                 <h1>Hi, I'm Charlotte</h1>

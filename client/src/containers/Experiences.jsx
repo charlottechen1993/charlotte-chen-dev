@@ -3,7 +3,9 @@ import { DateTime } from "luxon";
 import { Grid, Typography, Container } from '@material-ui/core';
 import { uniqueId } from 'lodash';
 
-const Experiences = () => {
+const Experiences = ({
+    innerRef
+}) => {
     const [experiences, updateExperiences] = useState([]);
     
     useEffect(() => {
@@ -14,7 +16,7 @@ const Experiences = () => {
 
 
     return (
-        <div className="experiences-container">
+        <div className="experiences-container" ref={innerRef}>
             <Container>
                 <Grid
                     container

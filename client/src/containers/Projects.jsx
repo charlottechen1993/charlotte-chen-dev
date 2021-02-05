@@ -34,7 +34,6 @@ const Projects = () => {
     useEffect(() => {
         let newColumns = 1;
 
-        console.log()
         if (width > LARGE_DESKTOP_BREAKPOINT) {
             newColumns = 4;
         }
@@ -49,7 +48,7 @@ const Projects = () => {
     }, [width]);
 
     return (
-        <div className="projects-container">
+        <div className="projects-container" id="projects-container">
             <Container>
                 <Grid
                     container
