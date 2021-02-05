@@ -14,6 +14,7 @@ import {
 } from '@material-ui/icons';
 import { uniqueId } from 'lodash';
 import homeImage from '../images/homeImage.png';
+import About from './About';
 
 const Home = () => {
     const [social, updateSocial] = useState([]);
@@ -32,6 +33,7 @@ const Home = () => {
         "youtube": YouTube
     }
     return (
+        <>
         <Grid
             container
             direction="row"
@@ -86,7 +88,8 @@ const Home = () => {
                 })}
             </Grid>
         </Grid>
-        
+        <About />
+        </>
     )
 }
 

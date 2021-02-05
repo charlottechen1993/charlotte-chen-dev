@@ -30,7 +30,7 @@ app.get('/api/experiences', (req, res) => {
         },
         {
             company: "DASH (Booz Allen Hamilton)",
-            role: "Lead Frontend Developer",
+            role: "Lead Frontend Developer (Camping Team)",
             descriptions: [
                 "Led frontend development efforts for one of NIH’s data sharing platforms (https://dash.nichd.nih.gov) using ReactJS, Redux, Redux-Form, Bootstrap, Sass, and C#",
                 "Served as the primary developer and designer for the study information page and study request form."

@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
         }),
         marginRight: 0,
     },
+    offset: theme.mixins.toolbar,
 }));
 
 export default useStyles;
