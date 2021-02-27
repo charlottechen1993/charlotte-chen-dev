@@ -15,7 +15,7 @@ app.get('/api/experiences', (req, res) => {
     const experiences = [
         {
             company: "Recreation.gov (Booz Allen Hamilton)",
-            role: "Lead Frontend Developer",
+            role: "Lead Frontend Developer (Camping Team)",
             descriptions: [
                 "Facilitates frontend development and continuous delivery efforts for the new www.recreation.gov.",
                 "Refactored the site’s most computationally complex availability/booking grid component, which resulted in a 10-time performance improvement per user interaction with the grid.",
@@ -30,7 +30,7 @@ app.get('/api/experiences', (req, res) => {
         },
         {
             company: "DASH (Booz Allen Hamilton)",
-            role: "Lead Frontend Developer (Camping Team)",
+            role: "Lead Frontend Developer",
             descriptions: [
                 "Led frontend development efforts for one of NIH’s data sharing platforms (https://dash.nichd.nih.gov) using ReactJS, Redux, Redux-Form, Bootstrap, Sass, and C#",
                 "Served as the primary developer and designer for the study information page and study request form."
