@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import {
     Grid,
     IconButton,
@@ -20,6 +21,7 @@ import Projects from './Projects';
 
 const Home = () => {
     const [social, updateSocial] = useState([]);
+    const { t, i18n } = useTranslation();
     
     useEffect(() => {
         fetch('/api/social')
@@ -34,6 +36,11 @@ const Home = () => {
         "linkedin": LinkedIn,
         "youtube": YouTube
     }
+
+    const handleClick = (lang) => {
+        i18n.changeLanguage(lang);
+    }
+
     return (
         <>
         <Grid
@@ -61,15 +68,17 @@ const Home = () => {
                 color="text.primary"
                 width="90%"
                 maxWidth={500}>
-                <p>
-                    Welcome to my site!
-                </p>
-                <p>
-                    I'm a Software Engineer currently based in Fairfax, VA.
-                </p>
+                <p>{t('Home.1')}</p>
+                <p>{t('Home.2')}</p>
                 <p>
                     Feel free to check out my work <u><Link to="/experiences">experiences</Link></u> and personal <u><Link to="/projects">projects</Link></u>,
                     or connect with me at the platforms below.
+                </p>
+                <p>
+                    Prefer a different language?
+                    <button onClick={() => handleClick('en')}>English</button>
+                    <button onClick={() => handleClick('chi')}>简体中文</button>
+                    <button onClick={() => handleClick('fr')}>Francois</button>
                 </p>
             </Box>
 
