@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { DateTime } from "luxon";
+import { useTranslation } from 'react-i18next';
 import { Grid, Typography, Container } from '@material-ui/core';
-import { uniqueId } from 'lodash';
+import { uniqueId, startCase, toLower } from 'lodash';
 
 const Experiences = ({
     innerRef
 }) => {
     const [experiences, updateExperiences] = useState([]);
+    const { t } = useTranslation();
     
     useEffect(() => {
         fetch('/api/experiences')
             .then((res) => res.json())
             .then((newEx) => updateExperiences(newEx));
     }, []);
-
 
     return (
         <div className="experiences-container" ref={innerRef}>
@@ -24,7 +25,7 @@ const Experiences = ({
                     justify="center"
                     alignItems="center"
                     >
-                    <h1>Experiences</h1>
+                    <h1>{startCase(toLower(t('Nav.Experiences')))}</h1>
                     <div>
                         {experiences.map((experience) => (
                             <div key={uniqueId()}>

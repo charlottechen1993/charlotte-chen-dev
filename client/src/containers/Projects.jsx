@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { startCase, toLower } from 'lodash';
 import {
     Grid,
     GridList,
@@ -24,6 +26,7 @@ const Projects = () => {
     const classes = useStyles();
     const [projects, updateProjects] = useState([]);
     const [columns, updateCol] = useState(2);
+    const { t } = useTranslation();
     
     useEffect(() => {
         fetch('/api/projects')
@@ -56,7 +59,7 @@ const Projects = () => {
                     justify="center"
                     alignItems="center"
                     >
-                    <h1>Personal Projects</h1>
+                    <h1>{startCase(toLower(t('Nav.Projects')))}</h1>
                     <GridList
                         cellHeight={180}
                         className={classes.gridList}

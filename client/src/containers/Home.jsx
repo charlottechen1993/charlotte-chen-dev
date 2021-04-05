@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import {
     Grid,
     IconButton,
+    ButtonGroup,
+    Button,
     Box
 } from '@material-ui/core';
 import {
@@ -73,12 +75,6 @@ const Home = () => {
                 <p>
                     {t('Home.4')} <u><Link to="/experiences">{t('Nav.Experiences')}</Link></u> {t('Base.and')} <u><Link to="/projects">{t('Nav.Projects')}</Link></u>, {t('Home.5')}.
                 </p>
-                <p>
-                    {t('Home.6')}
-                    <button onClick={() => handleClick('en')}>English</button>
-                    <button onClick={() => handleClick('chi')}>简体中文</button>
-                    <button onClick={() => handleClick('fr')}>Français</button>
-                </p>
             </Box>
 
             <Grid
@@ -98,9 +94,24 @@ const Home = () => {
                     )
                 })}
             </Grid>
+
+            <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center">
+                <ButtonGroup variant="text" size="small" aria-label="languages button group" className="lang-button-group">
+                    <Button onClick={() => handleClick('en')}>English</Button>
+                    <Button onClick={() => handleClick('chi')}>简体中文</Button>
+                    <Button onClick={() => handleClick('fr')}>Français</Button>
+                </ButtonGroup>
+            </Grid>
         </Grid>
+        
         <About />
+
         <Experiences />
+
         <Projects />
         </>
     )

@@ -4,8 +4,12 @@ import {
     Box,
     Container
 } from '@material-ui/core'
+import { useTranslation } from 'react-i18next';
+import { startCase, toLower } from 'lodash';
 
 const About = () => {
+    const { t } = useTranslation();
+    
     return (
         <div className="about-container" id="about-container">
             <Container>
@@ -15,7 +19,7 @@ const About = () => {
                     justify="center"
                     alignItems="center"
                     >
-                    <h1>About Me</h1>
+                    <h1>{startCase(toLower(t('Nav.About')))}</h1>
                     <Box color="text.primary">
                         <p>
                             Hello, I'm Charlotte Chen, a Software Engineer specialized in frontend development in the past 4 years.

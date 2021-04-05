@@ -4,6 +4,8 @@ $desktop-width: 1024px;
 
 .home-container {
     padding-bottom: 5rem;
+    min-height: calc(100vh - 64px);
+
     h1 {
         font-size: 1.4rem;
         @media (min-width: #{$mobile-width}) {
