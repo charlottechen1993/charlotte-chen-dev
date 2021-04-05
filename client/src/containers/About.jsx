@@ -9,7 +9,7 @@ import { startCase, toLower } from 'lodash';
 
 const About = () => {
     const { t } = useTranslation();
-    
+
     return (
         <div className="about-container" id="about-container">
             <Container>
@@ -22,17 +22,13 @@ const About = () => {
                     <h1>{startCase(toLower(t('Nav.About')))}</h1>
                     <Box color="text.primary">
                         <p>
-                            Hello, I'm Charlotte Chen, a Software Engineer specialized in frontend development in the past 4 years.
+                            {t('About.1')}
                         </p>
                         <p>
-                            Since I was little, I have loved to draw comic stories. Eventually I was exposed to computer softwares,
-                            and I began to turn my comics into animation cartoons using Powerpoint and eventually Flash.
-                            With an equal passion for computer and art, I declared my major in Computer Science. 
+                            {t('About.2')}
                         </p>
                         <p>
-                            The idea of developing is same to drawing: you start with a blank space and the possibilities are limitless.
-                            The potential of creating something great constantly motivates
-                            me to develop more applications with beautiful and functional interfaces.
+                            {t('About.3')}
                         </p>
                     </Box>
                 </Grid>    
