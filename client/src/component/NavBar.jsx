@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
+import { toUpper } from 'lodash';
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,7 +16,6 @@ import {
     IconButton,
     Drawer,
     Divider,
-    Container,
     ClickAwayListener,
     List,
     ListItem,
@@ -43,37 +44,38 @@ import useStyles from '../hooks/useStyles';
 import { MOBILE_BREAKPOINT } from '../constants/breakpoints';
 import { uniqueId, isEmpty } from 'lodash';
 
-const menuItems = [
-    {
-        id: '',
-        label: "Home",
-        icon: <HomeIcon />,
-        component: <Home />
-    },
-    {
-        id: 'about',
-        label: "About",
-        icon: <PersonOutlineIcon />,
-        component: <About />
-    },
-    {
-        id: 'experiences',
-        label: "Experiences",
-        icon: <WorkOutlineIcon />,
-        component: <Experiences />
-    },
-    {
-        id: 'projects',
-        label: "Projects",
-        icon: <CodeIcon />,
-        component: <Projects />
-    }
-];
-
 const NavBar = () => {
     const { width } = useWindowSize();
     const classes = useStyles();
     const theme = useTheme();
+    const { t } = useTranslation();
+
+    const menuItems = [
+        {
+            id: '',
+            label: t('Nav.Home'),
+            icon: <HomeIcon />,
+            component: <Home />
+        },
+        {
+            id: 'about',
+            label: t('Nav.About'),
+            icon: <PersonOutlineIcon />,
+            component: <About />
+        },
+        {
+            id: 'experiences',
+            label: toUpper(t('Nav.Experiences')),
+            icon: <WorkOutlineIcon />,
+            component: <Experiences />
+        },
+        {
+            id: 'projects',
+            label: toUpper(t('Nav.Projects')),
+            icon: <CodeIcon />,
+            component: <Projects />
+        }
+    ];
 
     const [open, setOpen] = useState(false);
 

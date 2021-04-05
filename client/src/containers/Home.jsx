@@ -52,7 +52,7 @@ const Home = () => {
             id="home-container">
 
             <Box color="text.primary" textAlign="center">
-                <h1>Hi, I'm Charlotte</h1>
+                <h1>{t('Home.1')}</h1>
             </Box>
 
             <Grid
@@ -68,17 +68,16 @@ const Home = () => {
                 color="text.primary"
                 width="90%"
                 maxWidth={500}>
-                <p>{t('Home.1')}</p>
                 <p>{t('Home.2')}</p>
+                <p>{t('Home.3')}</p>
                 <p>
-                    Feel free to check out my work <u><Link to="/experiences">experiences</Link></u> and personal <u><Link to="/projects">projects</Link></u>,
-                    or connect with me at the platforms below.
+                    {t('Home.4')} <u><Link to="/experiences">{t('Nav.Experiences')}</Link></u> {t('Base.and')} <u><Link to="/projects">{t('Nav.Projects')}</Link></u>, {t('Home.5')}.
                 </p>
                 <p>
                     Prefer a different language?
                     <button onClick={() => handleClick('en')}>English</button>
                     <button onClick={() => handleClick('chi')}>简体中文</button>
-                    <button onClick={() => handleClick('fr')}>Francois</button>
+                    <button onClick={() => handleClick('fr')}>Français</button>
                 </p>
             </Box>
 

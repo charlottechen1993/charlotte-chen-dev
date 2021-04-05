@@ -1,6 +1,16 @@
 {
     "Home": {
-        "1": "Bonjour, je m'appelle Charlotte Chen",
-        "2": "Je suis une ingénieur logiciel à Fairfax, Virginie."
+        "1": "Bonjour! Je suis Charlotte",
+        "2": "Bienvenue sur ma site",
+        "3": "Je suis une ingénieur logiciel à Fairfax, Virginie."
+    },
+    "Nav": {
+        "Home": "PAGE D'ACCUEIL",
+        "About": "MOI",
+        "Experiences": "EXPÉRIENCES",
+        "Projects": "PROJETS"
+    },
+    "Base": {
+        "and": "et"
     }
 }
