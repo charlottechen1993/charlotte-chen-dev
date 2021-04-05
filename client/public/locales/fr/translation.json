@@ -1,14 +1,17 @@
 {
     "Home": {
         "1": "Bonjour! Je suis Charlotte",
-        "2": "Bienvenue sur ma site",
-        "3": "Je suis une ingénieur logiciel à Fairfax, Virginie."
+        "2": "Bienvenue sur ma site!",
+        "3": "Je suis une ingénieur logiciel à Fairfax, Virginie.",
+        "4": "N’hésitez pas à consulter mes",
+        "5": "ou à communiquer avec moi sur les plateformes ci-dessous",
+        "6": "Préférez-vous une autre langue?"
     },
     "Nav": {
-        "Home": "PAGE D'ACCUEIL",
-        "About": "MOI",
-        "Experiences": "EXPÉRIENCES",
-        "Projects": "PROJETS"
+        "Home": "page d'accueil",
+        "About": "moi",
+        "Experiences": "expériences",
+        "Projects": "projets"
     },
     "Base": {
         "and": "et"

@@ -74,7 +74,7 @@ const Home = () => {
                     {t('Home.4')} <u><Link to="/experiences">{t('Nav.Experiences')}</Link></u> {t('Base.and')} <u><Link to="/projects">{t('Nav.Projects')}</Link></u>, {t('Home.5')}.
                 </p>
                 <p>
-                    Prefer a different language?
+                    {t('Home.6')}
                     <button onClick={() => handleClick('en')}>English</button>
                     <button onClick={() => handleClick('chi')}>简体中文</button>
                     <button onClick={() => handleClick('fr')}>Français</button>
